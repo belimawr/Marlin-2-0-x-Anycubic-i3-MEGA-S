@@ -33,7 +33,7 @@
  * vendor name, download location, GitHub account, etc.
  */
 #ifndef DETAILED_BUILD_VERSION
-  #define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " (knutwurst, Github)"
+  #define DETAILED_BUILD_VERSION SHORT_BUILD_VERSION " (knutwurst, Belimawr, Github)"
 #endif
 
 /**
@@ -44,7 +44,7 @@
  #define CUSTOM_BUILD_VERSION "1.1.8.1"
 
 #ifndef STRING_DISTRIBUTION_DATE
-  #define STRING_DISTRIBUTION_DATE "2021-01-01"
+  #define STRING_DISTRIBUTION_DATE "2021-01-16"
 #endif
 
 /**
@@ -75,7 +75,7 @@
  * Define a generic printer name to be output to the LCD after booting Marlin.
  */
 #ifndef MACHINE_NAME
-  #define MACHINE_NAME "Knutwurst's Anycubic i3 MEGA"
+  #define MACHINE_NAME "Belimawr's Anycubic i3 MEGA"
 #endif
 
 /**
@@ -84,7 +84,7 @@
  * providing the source code to your customers.)
  */
 #ifndef SOURCE_CODE_URL
-  #define SOURCE_CODE_URL "https://github.com/knutwurst/Marlin-2-0-x-Anycubic-i3-MEGA-S"
+  #define SOURCE_CODE_URL "https://github.com/belimawr/Marlin-2-0-x-Anycubic-i3-MEGA-S"
 #endif
 
 /**

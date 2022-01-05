@@ -78,7 +78,7 @@
  * 
  */
 //#define KNUTWURST_MEGA
-//#define KNUTWURST_MEGA_S
+#define KNUTWURST_MEGA_S
 //#define KNUTWURST_MEGA_X
 //#define KNUTWURST_MEGA_P
 
@@ -179,7 +179,7 @@
  * These settings are required and not set by PlatformIO.
  */
 #define KNUTWURST_PRHEAT_NOZZLE_PLA 200
-#define KNUTWURST_PRHEAT_BED_PLA     60
+#define KNUTWURST_PRHEAT_BED_PLA     50
 #define KNUTWURST_PRHEAT_NOZZLE_ABS 240
 #define KNUTWURST_PRHEAT_BED_ABS     90
 
@@ -217,7 +217,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(knutwurst)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(knutwurst, belimawr)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -286,11 +286,11 @@
  * on the upper left of the PCB silkscreen.
  */
 #ifndef MOTHERBOARD
-  //#define MOTHERBOARD BOARD_TRIGORILLA_14  // Is normally set by PlatformIO
+  #define MOTHERBOARD BOARD_TRIGORILLA_14  // Is normally set by PlatformIO
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-//#define CUSTOM_MACHINE_NAME "3D Printer"
+#define CUSTOM_MACHINE_NAME "Make machine"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like http://www.uuidgenerator.net/version4
@@ -642,9 +642,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // i3 Mega stock v5 hotend, 40W heater cartridge (3.6Ω @ 22°C)
-  #define  DEFAULT_Kp 15.94
-  #define  DEFAULT_Ki 1.17
-  #define  DEFAULT_Kd 54.19
+  #define  DEFAULT_Kp 19.27
+  #define  DEFAULT_Ki 1.36
+  #define  DEFAULT_Kd 68.28
 
   // Ultimaker
   // #define DEFAULT_Kp 22.2
@@ -697,9 +697,9 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
   //Anycubic i3 Mega Ultrabase (0.9Ω @ 22°C)
-  #define DEFAULT_bedKp 251.78
-  #define DEFAULT_bedKi 49.57
-  #define DEFAULT_bedKd 319.73
+  #define DEFAULT_bedKp 72.36
+  #define DEFAULT_bedKi 13.38
+  #define DEFAULT_bedKd 260.79
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
@@ -720,7 +720,7 @@
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
 #define PREVENT_COLD_EXTRUSION
-#define EXTRUDE_MINTEMP 170
+#define EXTRUDE_MINTEMP 175
 
 /**
  * Prevent a single extrusion longer than EXTRUDE_MAXLENGTH.
@@ -914,7 +914,7 @@
 #endif
 
 #if ENABLED(KNUTWURST_MEGA_S)
-    #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 392 }
+    #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 425.58 }
 #endif
 
 #if ENABLED(KNUTWURST_MEGA_X)
@@ -1254,7 +1254,7 @@
 #endif
 
 #if DISABLED(KNUTWURST_BLTOUCH)
-    #define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
+    #define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0.26 }
 #endif
 
 // Most probes should stay away from the edges of the bed, but
@@ -1488,9 +1488,9 @@
 */
 
 #if ANY(KNUTWURST_MEGA, KNUTWURST_MEGA_S, KNUTWURST_MEGA_P)
-    #define X_BED_SIZE 225
-    #define Y_BED_SIZE 220
-    #define Z_BED_HEIGHT 210
+    #define X_BED_SIZE 220
+    #define Y_BED_SIZE 210
+    #define Z_BED_HEIGHT 205
 #endif
 
 #if ENABLED(KNUTWURST_MEGA_X)
@@ -1500,8 +1500,8 @@
 #endif
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define X_MIN_POS -5
+#define Y_MIN_POS -5
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
@@ -2180,7 +2180,7 @@
 //
 // Short 2KHz beep when endstops are hit
 //
-//#define ENDSTOP_BEEP
+#define ENDSTOP_BEEP
 
 //
 // The duration and frequency for the UI feedback sound.
