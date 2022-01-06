@@ -137,7 +137,7 @@
  * PLEASE READ THE WARNING ABOVE!
  * 
  */
-//#define KNUTWURST_BLTOUCH
+#define KNUTWURST_BLTOUCH
 
 /*
  * This feature is for debugging purpose only.
@@ -178,8 +178,8 @@
  * 
  * These settings are required and not set by PlatformIO.
  */
-#define KNUTWURST_PRHEAT_NOZZLE_PLA 200
-#define KNUTWURST_PRHEAT_BED_PLA     50
+#define KNUTWURST_PRHEAT_NOZZLE_PLA 190
+#define KNUTWURST_PRHEAT_BED_PLA     60
 #define KNUTWURST_PRHEAT_NOZZLE_ABS 240
 #define KNUTWURST_PRHEAT_BED_ABS     90
 
@@ -290,7 +290,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Make machine"
+#define CUSTOM_MACHINE_NAME "Anycubic Mega S BLTouch"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like http://www.uuidgenerator.net/version4
@@ -1132,7 +1132,7 @@
  *
  */
 #if ENABLED(KNUTWURST_BLTOUCH)
-    #define Z_MIN_PROBE_PIN 2 // Pin 32 is the RAMPS default
+#define Z_MIN_PROBE_PIN 66 // T3 sensor // 21 - Anycubic Mega S SCL pin
 #endif
 
 /**
@@ -1249,7 +1249,8 @@
  * Specify a Probe position as { X, Y, Z }
  */
 #if ENABLED(KNUTWURST_BLTOUCH)
-    #define NOZZLE_TO_PROBE_OFFSET { -2, -25, 0 } //https://www.thingiverse.com/thing:2824005
+    /* #define NOZZLE_TO_PROBE_OFFSET { -2, -25, 0 } //https://www.thingiverse.com/thing:2824005 - Original */
+    #define NOZZLE_TO_PROBE_OFFSET { -1.8, -22, -2.3 } // Mine
     //#define NOZZLE_TO_PROBE_OFFSET { 29, -15, 0 } //X-Carriage
 #endif
 
@@ -1279,7 +1280,7 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-//#define MULTIPLE_PROBING 2
+#define MULTIPLE_PROBING 2
 //#define EXTRA_PROBING    1
 
 /**
